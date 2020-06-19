@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.logilite.scm</groupId>
+  <artifactId>repopushpull</artifactId>
+  <version>0.0.8-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20200617.063930</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20200617063930</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>0.0.8-20200617.063930-1</value>
+        <updated>20200617063930</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.0.8-20200617.063930-1</value>
+        <updated>20200617063930</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

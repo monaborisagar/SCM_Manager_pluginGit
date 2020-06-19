@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>scm-plugins</artifactId>
+		<groupId>sonia.scm.plugins</groupId>
+		<version>1.23</version>
+	</parent>
+
+	<groupId>com.logilite.scm</groupId>
+	<artifactId>repopushpull</artifactId>
+	<packaging>jar</packaging>
+	<version>0.0.8-SNAPSHOT</version>
+	<name>${project.artifactId}</name>
+	<description>plugin description</description>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${servlet.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-jexl</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.aragost.javahg</groupId>
+			<artifactId>javahg</artifactId>
+			<version>0.5</version>
+		</dependency>
+	 
+
+
+		<!-- test scope -->
+
+		<dependency>
+			<groupId>sonia.scm</groupId>
+			<artifactId>scm-test</artifactId>
+			<version>${project.parent.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>sonia.scm.plugins</groupId>
+			<artifactId>scm-hg-plugin</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+
+		<defaultGoal>scmp:run</defaultGoal>
+
+		<plugins>
+
+			<plugin>
+				<groupId>sonia.scm.maven</groupId>
+				<artifactId>scm-maven-plugin</artifactId>
+				<version>1.30</version>
+				<configuration>
+					<loggginConfiguration>src/main/conf/logging.xml</loggginConfiguration>
+				</configuration>
+			</plugin>
+
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>sonia.scm.maven</groupId>
+										<artifactId>
+											scm-maven-plugin
+										</artifactId>
+										<versionRange>[1.30,)</versionRange>
+										<goals>
+											<goal>fix-descriptor</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+
+				</plugin>
+
+				 
+
+
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<repositories>
+
+		<repository>
+			<id>maven.scm-manager.org</id>
+			<name>scm-manager release repository</name>
+			<url>http://maven.scm-manager.org/nexus/content/groups/public</url>
+		</repository>
+
+	</repositories>
+
+</project>
